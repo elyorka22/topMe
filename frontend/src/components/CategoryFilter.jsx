@@ -17,8 +17,9 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
   const checkScroll = () => {
     if (categoryRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = categoryRef.current
-      setShowLeftArrow(scrollLeft > 0)
-      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1)
+      const canScroll = scrollWidth > clientWidth
+      setShowLeftArrow(canScroll && scrollLeft > 10)
+      setShowRightArrow(canScroll && scrollLeft < scrollWidth - clientWidth - 10)
     }
   }
 
@@ -53,8 +54,9 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
 
   const scrollLeft = () => {
     if (categoryRef.current) {
+      const scrollAmount = categoryRef.current.clientWidth * 0.8
       categoryRef.current.scrollBy({
-        left: -200,
+        left: -scrollAmount,
         behavior: 'smooth'
       })
     }
@@ -62,8 +64,9 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
 
   const scrollRight = () => {
     if (categoryRef.current) {
+      const scrollAmount = categoryRef.current.clientWidth * 0.8
       categoryRef.current.scrollBy({
-        left: 200,
+        left: scrollAmount,
         behavior: 'smooth'
       })
     }

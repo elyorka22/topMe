@@ -5,6 +5,8 @@
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  width: 100%;
+  overflow: hidden; /* Скрываем переполнение для карусели */
 }
 
 .category-filter {
@@ -19,7 +21,10 @@
   -ms-overflow-style: none; /* IE и Edge */
   flex: 1;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory; /* Обязательное выравнивание */
+  width: 100%;
+  /* Принудительная прокрутка даже если все помещается */
+  min-width: 100%;
 }
 
 /* Скрываем скроллбар в WebKit браузерах */
@@ -42,11 +47,13 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  min-width: fit-content;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: pan-y;
-  scroll-snap-align: start;
+  touch-action: pan-x; /* Разрешаем горизонтальную прокрутку */
+  scroll-snap-align: center; /* Центрируем при прокрутке */
+  /* Минимальная ширина для карусели */
+  min-width: calc(25% - 0.75rem);
+  max-width: none;
 }
 
 .category-button:active {
@@ -126,18 +133,49 @@
   right: 0.5rem;
 }
 
-/* На очень маленьких экранах показываем стрелки */
+/* На мобильных устройствах делаем полноценную карусель */
 @media (max-width: 767px) {
   .category-filter-wrapper {
     padding: 0 2.5rem; /* Место для стрелок */
+    position: relative;
   }
   
   .category-filter {
     padding: 0.75rem 0.5rem;
+    /* Принудительная прокрутка - кнопки не должны сжиматься */
+    gap: 0.5rem;
+  }
+  
+  .category-button {
+    /* На мобильных каждая кнопка занимает больше места для карусели */
+    min-width: 120px;
+    padding: 0.6rem 1rem;
   }
   
   .category-scroll-btn {
     display: flex;
+  }
+  
+  /* Градиентные тени по краям для индикации прокрутки */
+  .category-filter-wrapper::before,
+  .category-filter-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    z-index: 1002;
+    pointer-events: none;
+  }
+  
+  .category-filter-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95), transparent);
+  }
+  
+  .category-filter-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
   }
 }
 
