@@ -15,14 +15,22 @@
 
 .create-ad-modal {
   background: white;
-  border-radius: 20px;
+  border-radius: 16px;
   max-width: 600px;
-  width: 100%;
-  max-height: 90vh;
+  width: 95%;
+  max-height: 95vh;
   overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .create-ad-modal {
+    border-radius: 20px;
+    width: 100%;
+    max-height: 90vh;
+  }
 }
 
 .create-ad-close {
@@ -46,9 +54,16 @@
 }
 
 .create-ad-modal h2 {
-  margin: 2rem 2rem 1rem 2rem;
-  font-size: 1.75rem;
+  margin: 1.25rem 1.5rem 0.75rem 1.5rem;
+  font-size: 1.35rem;
   color: #333;
+}
+
+@media (min-width: 768px) {
+  .create-ad-modal h2 {
+    margin: 2rem 2rem 1rem 2rem;
+    font-size: 1.75rem;
+  }
 }
 
 .create-ad-error {
@@ -61,7 +76,13 @@
 }
 
 .create-ad-form {
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .create-ad-form {
+    padding: 0 2rem 2rem 2rem;
+  }
 }
 
 .form-group {

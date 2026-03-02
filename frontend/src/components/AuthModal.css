@@ -15,12 +15,22 @@
 
 .auth-modal {
   background: white;
-  border-radius: 20px;
+  border-radius: 16px;
   max-width: 450px;
-  width: 100%;
+  width: 95%;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .auth-modal {
+    border-radius: 20px;
+    width: 100%;
+    max-height: none;
+  }
 }
 
 .auth-close {
@@ -49,8 +59,15 @@
 .auth-tabs {
   display: flex;
   border-bottom: 2px solid #f0f0f0;
-  padding: 0 2rem;
-  margin-top: 2rem;
+  padding: 0 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .auth-tabs {
+    padding: 0 2rem;
+    margin-top: 2rem;
+  }
 }
 
 .auth-tab {
@@ -85,7 +102,13 @@
 }
 
 .auth-form {
-  padding: 2rem;
+  padding: 1.25rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .auth-form {
+    padding: 2rem;
+  }
 }
 
 .auth-form-group {

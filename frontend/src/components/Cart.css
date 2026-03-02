@@ -76,14 +76,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem 1.25rem;
   border-bottom: 1px solid #e0e0e0;
 }
 
 .cart-header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #333;
+}
+
+@media (min-width: 768px) {
+  .cart-header {
+    padding: 1.5rem;
+  }
+  
+  .cart-header h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .cart-close {
