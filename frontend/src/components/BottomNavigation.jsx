@@ -1,6 +1,7 @@
 import React from 'react'
 import './BottomNavigation.css'
 
+// Категории карты (фильтры)
 const categories = [
   { id: 'all', name: 'Hammasi', icon: 'location_on' },
   { id: 'restaurants', name: 'Restoranlar', icon: 'chef_hat' },
@@ -23,6 +24,21 @@ function BottomNavigation({ selectedCategory, onCategoryChange }) {
             <span className="material-symbols-outlined bottom-nav-icon">{category.icon}</span>
           </button>
         ))}
+        {/* Дополнительные иконки: лента и профиль (пока без логики фильтра) */}
+        <button
+          className="bottom-nav-button"
+          aria-label="Lenta"
+          title="Lenta"
+        >
+          <span className="material-symbols-outlined bottom-nav-icon">rss_feed</span>
+        </button>
+        <button
+          className="bottom-nav-button"
+          aria-label="Profil"
+          title="Profil"
+        >
+          <span className="material-symbols-outlined bottom-nav-icon">person</span>
+        </button>
       </div>
     </nav>
   )
