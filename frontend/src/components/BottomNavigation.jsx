@@ -9,7 +9,7 @@ const categories = [
   { id: 'ads', name: 'E\'lonlar', icon: 'campaign' },
 ]
 
-function BottomNavigation({ selectedCategory, onCategoryChange }) {
+function BottomNavigation({ selectedCategory, onCategoryChange, onOpenFeed, onOpenProfile }) {
   return (
     <nav className="bottom-navigation">
       <div className="bottom-navigation-inner">
@@ -24,11 +24,12 @@ function BottomNavigation({ selectedCategory, onCategoryChange }) {
             <span className="material-symbols-outlined bottom-nav-icon">{category.icon}</span>
           </button>
         ))}
-        {/* Дополнительные иконки: лента и профиль (пока без логики фильтра) */}
+        {/* Дополнительные иконки: лента va profil */}
         <button
           className="bottom-nav-button"
           aria-label="Lenta"
           title="Lenta"
+          onClick={onOpenFeed}
         >
           <span className="material-symbols-outlined bottom-nav-icon">rss_feed</span>
         </button>
@@ -36,6 +37,7 @@ function BottomNavigation({ selectedCategory, onCategoryChange }) {
           className="bottom-nav-button"
           aria-label="Profil"
           title="Profil"
+          onClick={onOpenProfile}
         >
           <span className="material-symbols-outlined bottom-nav-icon">person</span>
         </button>

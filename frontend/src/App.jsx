@@ -8,6 +8,8 @@ import AuthModal from './components/AuthModal'
 import UserMenu from './components/UserMenu'
 import CreateAdModal from './components/CreateAdModal'
 import AdminPanel from './components/admin/AdminPanel'
+import FeedPage from './components/FeedPage'
+import ProfilePage from './components/ProfilePage'
 import { locations as defaultLocations } from './data/locations'
 import { calculateDistance } from './utils/geolocation'
 import './App.css'
@@ -21,6 +23,8 @@ function AppContent() {
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [showCreateAd, setShowCreateAd] = useState(false)
   const [showAdminPanel, setShowAdminPanel] = useState(false)
+  const [showFeed, setShowFeed] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
   const [locations, setLocations] = useState(() => {
     // Загружаем локации из localStorage или используем дефолтные
     const saved = localStorage.getItem('locations')
@@ -240,7 +244,18 @@ function AppContent() {
       <BottomNavigation 
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
+        onOpenFeed={() => setShowFeed(true)}
+        onOpenProfile={() => setShowProfile(true)}
       />
+      {showFeed && (
+        <FeedPage onClose={() => setShowFeed(false)} />
+      )}
+      {showProfile && (
+        <ProfilePage 
+          onClose={() => setShowProfile(false)}
+          onOpenAdminPanel={() => setShowAdminPanel(true)}
+        />
+      )}
     </div>
   )
 }
