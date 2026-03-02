@@ -2,8 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
-import chefHat3d from '../assets/chef-3d.png' // 3D иконка повара для ресторанов
 import './MapComponent.css'
+
+// Попытка импортировать 3D иконку, если она существует
+let chefHat3d = null
+try {
+  chefHat3d = require('../assets/chef-3d.png')
+} catch (e) {
+  // Файл не найден, используем дефолтную иконку
+  console.warn('3D chef hat icon not found, using default icon')
+}
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
 const CITY_CENTER = [40.997778, 71.240278] // Ташкент, Узбекистан
@@ -48,17 +56,19 @@ const createCustomIcon = (iconName, color) => {
 // Иконка для локации пользователя
 const userLocationIcon = createCustomIcon('location_on', '#9b59b6')
 
-// 3D иконка для ресторанов (PNG)
-const restaurantIcon3D = L.icon({
-  iconUrl: chefHat3d,
-  iconSize: [48, 48],
-  iconAnchor: [24, 44],
-  popupAnchor: [0, -44],
-})
+// Создаем 3D иконку для ресторанов, если файл существует
+const restaurantIcon3D = chefHat3d 
+  ? L.icon({
+      iconUrl: chefHat3d,
+      iconSize: [48, 48],
+      iconAnchor: [24, 44],
+      popupAnchor: [0, -44],
+    })
+  : null
 
 // Иконки для разных категорий
 const categoryIcons = {
-  restaurants: restaurantIcon3D, // 3D иконка ресторана
+  restaurants: restaurantIcon3D || createCustomIcon('chef_hat', '#e74c3c'), // 3D иконка или дефолтная
   shops: createCustomIcon('store', '#3498db'), // Синий для магазинов
   ads: createCustomIcon('campaign', '#2ecc71'), // Зеленый для объявлений
 }
