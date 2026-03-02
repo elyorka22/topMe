@@ -4,13 +4,19 @@ import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import './MapComponent.css'
 
-// Попытка импортировать 3D иконку, если она существует
+// Попытка импортировать 3D иконки, если они существуют
 let chefHat3d = null
 try {
   chefHat3d = require('../assets/chef-3d.png')
 } catch (e) {
   // Файл не найден, используем дефолтную иконку
   console.warn('3D chef hat icon not found, using default icon')
+}
+let gift3d = null
+try {
+  gift3d = require('../assets/gift-3d.png')
+} catch (e) {
+  console.warn('3D gift icon not found, using default icon for ads')
 }
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
@@ -56,7 +62,7 @@ const createCustomIcon = (iconName, color) => {
 // Иконка для локации пользователя
 const userLocationIcon = createCustomIcon('location_on', '#9b59b6')
 
-// Создаем 3D иконку для ресторанов, если файл существует
+// Создаем 3D иконки, если файлы существуют
 const restaurantIcon3D = chefHat3d 
   ? L.icon({
       iconUrl: chefHat3d,
@@ -65,12 +71,20 @@ const restaurantIcon3D = chefHat3d
       popupAnchor: [0, -44],
     })
   : null
+const giftIcon3D = gift3d
+  ? L.icon({
+      iconUrl: gift3d,
+      iconSize: [52, 52],
+      iconAnchor: [26, 50],
+      popupAnchor: [0, -48],
+    })
+  : null
 
 // Иконки для разных категорий
 const categoryIcons = {
   restaurants: restaurantIcon3D || createCustomIcon('chef_hat', '#e74c3c'), // 3D иконка или дефолтная
   shops: createCustomIcon('store', '#3498db'), // Синий для магазинов
-  ads: createCustomIcon('campaign', '#2ecc71'), // Зеленый для объявлений
+  ads: giftIcon3D || createCustomIcon('campaign', '#2ecc71'), // 3D подарок для объявлений или дефолтная
 }
 
 function MapComponent({ locations, onLocationClick }) {
