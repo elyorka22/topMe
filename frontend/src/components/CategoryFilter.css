@@ -24,6 +24,13 @@
   white-space: nowrap;
   flex-shrink: 0;
   min-width: fit-content;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.category-button:active {
+  transform: scale(0.95);
 }
 
 @media (min-width: 768px) {
@@ -32,6 +39,10 @@
     padding: 0.75rem 1.25rem;
     border-radius: 25px;
     font-size: 0.95rem;
+  }
+  
+  .category-button:active {
+    transform: scale(1);
   }
 }
 

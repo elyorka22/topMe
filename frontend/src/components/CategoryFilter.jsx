@@ -1,3 +1,4 @@
+import React from 'react'
 import './CategoryFilter.css'
 
 const categories = [
@@ -8,8 +9,24 @@ const categories = [
 ]
 
 function CategoryFilter({ selectedCategory, onCategoryChange }) {
+  const categoryRef = React.useRef(null)
+
+  // Прокрутка к активной категории при изменении
+  React.useEffect(() => {
+    if (categoryRef.current) {
+      const activeButton = categoryRef.current.querySelector('.category-button.active')
+      if (activeButton) {
+        activeButton.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        })
+      }
+    }
+  }, [selectedCategory])
+
   return (
-    <div className="category-filter">
+    <div className="category-filter" ref={categoryRef}>
       {categories.map(category => (
         <button
           key={category.id}
