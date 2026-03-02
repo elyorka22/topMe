@@ -237,6 +237,10 @@ function AppContent() {
       {showAdminPanel && (
         <AdminPanel onClose={() => setShowAdminPanel(false)} />
       )}
+      <BottomNavigation 
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
     </div>
   )
 }
