@@ -17,9 +17,9 @@ function BottomNavigation({ selectedCategory, onCategoryChange }) {
           className={`bottom-nav-button ${selectedCategory === category.id ? 'active' : ''}`}
           onClick={() => onCategoryChange(category.id)}
           aria-label={category.name}
+          title={category.name}
         >
           <span className="material-symbols-outlined bottom-nav-icon">{category.icon}</span>
-          <span className="bottom-nav-label">{category.name}</span>
         </button>
       ))}
     </nav>
