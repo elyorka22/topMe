@@ -147,9 +147,13 @@
   }
   
   .category-button {
-    /* На мобильных каждая кнопка занимает больше места для карусели */
-    min-width: 120px;
-    padding: 0.6rem 1rem;
+    /* На мобильных каждая кнопка занимает фиксированную ширину для карусели */
+    min-width: 140px !important;
+    width: 140px !important;
+    max-width: 140px !important;
+    padding: 0.65rem 1rem;
+    justify-content: center;
+    flex-shrink: 0;
   }
   
   .category-scroll-btn {
