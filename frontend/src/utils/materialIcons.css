@@ -1,0 +1,71 @@
+/* Стили для Material Symbols */
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  
+  /* Настройки вариаций */
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Варианты стилей */
+.material-symbols-filled {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+}
+
+/* Размеры */
+.material-icon-small {
+  font-size: 18px;
+}
+
+.material-icon-medium {
+  font-size: 24px;
+}
+
+.material-icon-large {
+  font-size: 32px;
+}
+
+.material-icon-xlarge {
+  font-size: 48px;
+}
+
+/* Цвета для категорий */
+.material-icon-restaurant {
+  color: #e74c3c;
+}
+
+.material-icon-shop {
+  color: #3498db;
+}
+
+.material-icon-ads {
+  color: #2ecc71;
+}
+
+.material-icon-user {
+  color: #9b59b6;
+}
