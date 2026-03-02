@@ -3,8 +3,8 @@ import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import gift3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D подарок для объявлений
-import store3d from '../assets/vecteezy_book-store-3d-building_46593645.png' // 3D магазин для всех магазинов
-import restaurant3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.png' // 3D ресторан для всех ресторанов
+import store3d from '../assets/vecteezy_book-store-3d-building_46593645.jpg' // 3D магазин для всех магазинов
+import restaurant3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.jpg' // 3D ресторан для всех ресторанов
 import './MapComponent.css'
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
