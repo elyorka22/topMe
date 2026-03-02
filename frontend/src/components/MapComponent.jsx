@@ -4,16 +4,8 @@ import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import gift3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D подарок для объявлений
 import store3d from '../assets/vecteezy_book-store-3d-building_46593645.png' // 3D магазин для всех магазинов
+import restaurant3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.png' // 3D ресторан для всех ресторанов
 import './MapComponent.css'
-
-// Попытка импортировать 3D иконку для ресторанов, если она существует
-let chefHat3d = null
-try {
-  chefHat3d = require('../assets/chef-3d.png')
-} catch (e) {
-  // Файл не найден, используем дефолтную иконку
-  console.warn('3D chef hat icon not found, using default icon')
-}
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
 const CITY_CENTER = [40.997778, 71.240278] // Ташкент, Узбекистан
@@ -58,13 +50,13 @@ const createCustomIcon = (iconName, color) => {
 // Иконка для локации пользователя
 const userLocationIcon = createCustomIcon('location_on', '#9b59b6')
 
-// Создаем 3D иконки, если файлы существуют
-const restaurantIcon3D = chefHat3d 
+// Создаем 3D иконки
+const restaurantIcon3D = restaurant3d
   ? L.icon({
-      iconUrl: chefHat3d,
-      iconSize: [48, 48],
-      iconAnchor: [24, 44],
-      popupAnchor: [0, -44],
+      iconUrl: restaurant3d,
+      iconSize: [56, 56],
+      iconAnchor: [28, 52],
+      popupAnchor: [0, -50],
     })
   : null
 const giftIcon3D = gift3d
