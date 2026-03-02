@@ -10,7 +10,7 @@
 .app-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.9rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.9rem;
+  padding: 0.45rem 0.75rem;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
@@ -167,27 +167,35 @@
   .create-ad-button,
   .admin-button {
     min-width: 44px;
-    padding: 0.5rem;
+    padding: 0.4rem;
     justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: row; /* Заголовок слева, кнопка справа */
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .header-actions {
-    width: 100%;
-    flex-wrap: wrap;
+    width: auto;
+    flex-wrap: nowrap;
   }
 
   .auth-button,
   .create-ad-button {
-    flex: 1;
-    min-width: 120px;
+    flex: 0 0 auto;
+    min-width: 44px;
+  }
+
+  .app-header h1 {
+    font-size: 1.15rem;
+  }
+  
+  .app-header p {
+    font-size: 0.7rem;
   }
 }
 
