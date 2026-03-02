@@ -100,10 +100,13 @@ function MapComponent({ locations, onLocationClick }) {
 
     // Инициализация карты
     if (!mapRef.current) {
-      mapRef.current = L.map('map').setView([userLocation.lat, userLocation.lng], 14)
+      mapRef.current = L.map('map', {
+        zoomControl: false,
+      }).setView([userLocation.lat, userLocation.lng], 14)
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
+      // Более минималистичный light‑стиль карты
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '',
         maxZoom: 19,
       }).addTo(mapRef.current)
 

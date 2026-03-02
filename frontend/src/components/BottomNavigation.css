@@ -1,71 +1,84 @@
 .bottom-navigation {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
+  bottom: 10px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: white;
-  border-top: 1px solid #e0e0e0;
-  padding: 0.5rem 0;
-  z-index: 2000; /* Выше чем Leaflet (обычно 400) */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  /* Безопасная зона для iPhone с вырезом */
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  justify-content: center;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.bottom-navigation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bottom-navigation-inner {
+  pointer-events: auto;
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.65);
 }
 
 .bottom-nav-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1rem;
-  border: none;
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
-  flex: 1;
-  min-width: 0;
-  color: #666;
-}
-
-.bottom-nav-button:active {
-  transform: scale(0.95);
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  color: #e5e7eb;
 }
 
 .bottom-nav-icon {
-  font-size: 28px;
-  transition: all 0.3s ease;
-  color: #666;
-}
-
-.bottom-nav-button.active .bottom-nav-icon {
-  color: #667eea;
-  transform: scale(1.15);
-}
-
-.bottom-nav-button:hover {
-  background: rgba(102, 126, 234, 0.05);
+  font-size: 22px;
+  transition: inherit;
 }
 
 .bottom-nav-button.active {
-  background: rgba(102, 126, 234, 0.1);
+  background: radial-gradient(circle at top, #7f7aff, #6c63ff);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(108, 99, 255, 0.7);
+}
+
+.bottom-nav-button.active .bottom-nav-icon {
+  transform: scale(1.1);
+}
+
+.bottom-nav-button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* На мобильных устройствах */
 @media (max-width: 767px) {
   .bottom-navigation {
-    padding: 0.5rem 0;
-    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+    bottom: 8px;
   }
-  
+
+  .bottom-navigation-inner {
+    padding: 5px;
+  }
+
   .bottom-nav-button {
-    padding: 0.6rem 0.75rem;
+    width: 38px;
+    height: 38px;
   }
-  
+
   .bottom-nav-icon {
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 

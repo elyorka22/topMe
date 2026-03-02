@@ -8,6 +8,9 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  border-radius: 32px 32px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.35);
 }
 
 /* Полностью скрываем надпись Leaflet / OpenStreetMap под нижней навигацией */
@@ -40,6 +43,11 @@
 
 .custom-marker {
   background: transparent !important;
+  border: none !important;
+}
+
+.custom-marker .leaflet-marker-icon,
+.custom-marker .leaflet-marker-shadow {
   border: none !important;
 }
 

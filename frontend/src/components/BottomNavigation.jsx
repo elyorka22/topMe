@@ -11,17 +11,19 @@ const categories = [
 function BottomNavigation({ selectedCategory, onCategoryChange }) {
   return (
     <nav className="bottom-navigation">
-      {categories.map(category => (
-        <button
-          key={category.id}
-          className={`bottom-nav-button ${selectedCategory === category.id ? 'active' : ''}`}
-          onClick={() => onCategoryChange(category.id)}
-          aria-label={category.name}
-          title={category.name}
-        >
-          <span className="material-symbols-outlined bottom-nav-icon">{category.icon}</span>
-        </button>
-      ))}
+      <div className="bottom-navigation-inner">
+        {categories.map(category => (
+          <button
+            key={category.id}
+            className={`bottom-nav-button ${selectedCategory === category.id ? 'active' : ''}`}
+            onClick={() => onCategoryChange(category.id)}
+            aria-label={category.name}
+            title={category.name}
+          >
+            <span className="material-symbols-outlined bottom-nav-icon">{category.icon}</span>
+          </button>
+        ))}
+      </div>
     </nav>
   )
 }
