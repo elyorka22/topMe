@@ -4,12 +4,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: white; /* Полноэкранная страница без затемнения */
+  display: block;
   z-index: 10000;
-  padding: 1rem;
+  padding-top: 0;
   animation: fadeIn 0.3s ease;
 }
 
@@ -24,13 +22,12 @@
 
 .location-detail-card {
   background: white;
-  border-radius: 20px;
-  max-width: 600px;
+  border-radius: 0;
   width: 100%;
-  max-height: 90vh;
+  height: 100vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   animation: slideUp 0.3s ease;
 }
 
@@ -47,14 +44,14 @@
 
 .close-button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 40px;
-  height: 40px;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
   border: none;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -72,7 +69,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 2rem 2rem 1.5rem 2rem;
+  padding: 1.25rem 1rem 1rem 1rem;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -128,7 +125,7 @@
 }
 
 .location-detail-content {
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem 1.25rem 1rem;
 }
 
 .location-section {
@@ -189,7 +186,7 @@
 .location-detail-actions {
   display: flex;
   gap: 1rem;
-  padding: 1.5rem 2rem 2rem 2rem;
+  padding: 1rem 1rem 1.5rem 1rem;
   border-top: 1px solid #e0e0e0;
 }
 
@@ -232,12 +229,12 @@
 @media (max-width: 768px) {
   .location-detail-card {
     max-width: 100%;
-    border-radius: 20px 20px 0 0;
-    max-height: 95vh;
+    border-radius: 0;
+    height: 100vh;
   }
 
   .location-detail-header {
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    padding: 1.25rem 1rem 0.75rem 1rem;
   }
 
   .location-icon {
@@ -251,11 +248,11 @@
   }
 
   .location-detail-content {
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1rem 1rem 1rem;
   }
 
   .location-detail-actions {
     flex-direction: column;
-    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    padding: 0.75rem 1rem 1.25rem 1rem;
   }
 }

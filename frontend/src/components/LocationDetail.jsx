@@ -41,8 +41,8 @@ function LocationDetail({ location, userLocation, onClose, onAddToCart }) {
   const products = location.category === 'shops' ? getShopProducts(location.id) : null
 
   return (
-    <div className="location-detail-overlay" onClick={onClose}>
-      <div className="location-detail-card" onClick={(e) => e.stopPropagation()}>
+    <div className="location-detail-overlay">
+      <div className="location-detail-card">
         <button className="close-button" onClick={onClose}>×</button>
         
         <div className="location-detail-header">
