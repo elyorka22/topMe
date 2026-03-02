@@ -2,27 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
+import gift3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D подарок для объявлений
 import './MapComponent.css'
 
-// Попытка импортировать 3D иконки, если они существуют
+// Попытка импортировать 3D иконку для ресторанов, если она существует
 let chefHat3d = null
 try {
   chefHat3d = require('../assets/chef-3d.png')
 } catch (e) {
   // Файл не найден, используем дефолтную иконку
   console.warn('3D chef hat icon not found, using default icon')
-}
-let gift3d = null
-try {
-  // сначала пробуем короткое имя
-  gift3d = require('../assets/gift-3d.png')
-} catch (e) {
-  try {
-    // затем — фактическое имя файла, который ты загрузил
-    gift3d = require('../assets/3dicons-gift-box-dynamic-color.png')
-  } catch (e2) {
-    console.warn('3D gift icon not found, using default icon for ads')
-  }
 }
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
