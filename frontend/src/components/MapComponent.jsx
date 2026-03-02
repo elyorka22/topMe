@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import gift3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D подарок для объявлений
+import store3d from '../assets/vecteezy_book-store-3d-building_46593645.png' // 3D магазин для всех магазинов
 import './MapComponent.css'
 
 // Попытка импортировать 3D иконку для ресторанов, если она существует
@@ -74,11 +75,19 @@ const giftIcon3D = gift3d
       popupAnchor: [0, -48],
     })
   : null
+const storeIcon3D = store3d
+  ? L.icon({
+      iconUrl: store3d,
+      iconSize: [52, 52],
+      iconAnchor: [26, 50],
+      popupAnchor: [0, -48],
+    })
+  : null
 
 // Иконки для разных категорий
 const categoryIcons = {
   restaurants: restaurantIcon3D || createCustomIcon('chef_hat', '#e74c3c'), // 3D иконка или дефолтная
-  shops: createCustomIcon('store', '#3498db'), // Синий для магазинов
+  shops: storeIcon3D || createCustomIcon('store', '#3498db'), // 3D иконка магазина или дефолтная
   ads: giftIcon3D || createCustomIcon('campaign', '#2ecc71'), // 3D подарок для объявлений или дефолтная
 }
 
