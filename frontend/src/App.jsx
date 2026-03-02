@@ -206,10 +206,6 @@ function AppContent() {
           </div>
         </div>
       </header>
-      <CategoryFilter 
-        selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-      />
       <MapComponent 
         locations={filteredLocations} 
         onLocationClick={handleLocationClick}

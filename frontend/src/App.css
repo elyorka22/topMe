@@ -3,6 +3,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Отступ снизу для нижней навигации */
+  padding-bottom: 70px;
 }
 
 .app-header {
