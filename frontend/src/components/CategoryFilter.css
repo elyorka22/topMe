@@ -11,17 +11,28 @@
 .category-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
   border: 2px solid #e0e0e0;
-  border-radius: 25px;
+  border-radius: 20px;
   background: white;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #333;
   transition: all 0.3s ease;
   white-space: nowrap;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .category-button {
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+  }
 }
 
 .category-button:hover {
@@ -39,14 +50,25 @@
 }
 
 .category-icon {
-  font-size: 1.25rem;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 /* Стили для Material Symbols иконок */
 .category-icon.material-symbols-outlined {
-  font-size: 1.25rem;
+  font-size: 18px;
   line-height: 1;
   vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .category-icon {
+    font-size: 20px;
+  }
+  
+  .category-icon.material-symbols-outlined {
+    font-size: 20px;
+  }
 }
 
 .category-name {
