@@ -11,7 +11,7 @@
 
 .category-filter {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 0.75rem 1rem;
   background: white;
   overflow-x: auto;
@@ -21,7 +21,7 @@
   -ms-overflow-style: none; /* IE и Edge */
   flex: 1;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory; /* Обязательное выравнивание */
+  scroll-snap-type: x mandatory; /* Обязательное выравнивание для карусели */
   width: 100%;
   /* Принудительная прокрутка даже если все помещается */
   min-width: 100%;
@@ -50,10 +50,11 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-x; /* Разрешаем горизонтальную прокрутку */
-  scroll-snap-align: center; /* Центрируем при прокрутке */
-  /* Минимальная ширина для карусели */
-  min-width: calc(25% - 0.75rem);
-  max-width: none;
+  scroll-snap-align: center; /* Центрируем при прокрутке карусели */
+  /* Фиксированная ширина для карусели - кнопки стоят рядом */
+  min-width: 130px;
+  width: 130px;
+  max-width: 130px;
 }
 
 .category-button:active {
@@ -142,51 +143,66 @@
   
   .category-filter {
     padding: 0.75rem 0.5rem;
-    /* Принудительная прокрутка - кнопки не должны сжиматься */
+    /* Кнопки стоят рядом с минимальным отступом для карусели */
     gap: 0.5rem;
+    /* Принудительная прокрутка */
+    scroll-snap-type: x mandatory;
   }
   
   .category-button {
     /* На мобильных каждая кнопка занимает фиксированную ширину для карусели */
-    min-width: 140px !important;
-    width: 140px !important;
-    max-width: 140px !important;
+    min-width: 130px !important;
+    width: 130px !important;
+    max-width: 130px !important;
     padding: 0.65rem 1rem;
     justify-content: center;
     flex-shrink: 0;
+    /* Центрируем при прокрутке карусели */
+    scroll-snap-align: center;
   }
   
   .category-scroll-btn {
     display: flex;
   }
   
-  /* Градиентные тени по краям для индикации прокрутки */
+  /* Градиентные тени по краям для индикации прокрутки карусели */
   .category-filter-wrapper::before,
   .category-filter-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 20px;
+    width: 30px;
     z-index: 1002;
     pointer-events: none;
+    transition: opacity 0.3s ease;
   }
   
   .category-filter-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.95), transparent);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    opacity: 0;
+  }
+  
+  .category-filter-wrapper.show-left-shadow::before {
+    opacity: 1;
   }
   
   .category-filter-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    opacity: 0;
+  }
+  
+  .category-filter-wrapper.show-right-shadow::after {
+    opacity: 1;
   }
 }
 
-/* На десктопе скрываем стрелки */
+/* На десктопе тоже карусель, но с адаптивными размерами */
 @media (min-width: 768px) {
   .category-scroll-btn {
-    display: none;
+    display: none; /* На десктопе стрелки скрыты, используется скроллбар */
   }
   
   .category-filter-wrapper {
@@ -196,6 +212,7 @@
   .category-filter {
     gap: 0.75rem;
     padding: 1rem 1.5rem;
+    scroll-snap-type: x mandatory; /* Карусель и на десктопе */
   }
   
   .category-button {
@@ -203,6 +220,11 @@
     padding: 0.75rem 1.25rem;
     border-radius: 25px;
     font-size: 0.95rem;
+    /* На десктопе тоже фиксированная ширина для карусели */
+    min-width: 160px;
+    width: 160px;
+    max-width: 160px;
+    scroll-snap-align: center;
   }
   
   .category-button:active {
@@ -217,6 +239,7 @@
     font-size: 20px;
   }
   
+  /* Скроллбар при наведении на десктопе */
   .category-filter:hover {
     scrollbar-width: thin;
   }
