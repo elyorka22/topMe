@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import MapComponent from './components/MapComponent'
-import CategoryFilter from './components/CategoryFilter'
+import BottomNavigation from './components/BottomNavigation'
 import LocationDetail from './components/LocationDetail'
 import Cart from './components/Cart'
 import AuthModal from './components/AuthModal'
