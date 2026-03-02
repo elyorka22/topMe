@@ -176,7 +176,7 @@ function AppContent() {
     <div className="app">
       <header className="app-header">
         <div className="header-content">
-          <div>
+          <div className="header-title">
             <h1>TopMe</h1>
             <p>Ovqat yetkazib berish, mahsulotlar, e'lonlar</p>
           </div>
