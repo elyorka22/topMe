@@ -10,6 +10,7 @@ const categories = [
 
 function CategoryFilter({ selectedCategory, onCategoryChange }) {
   const categoryRef = useRef(null)
+  const wrapperRef = useRef(null)
   const [showLeftArrow, setShowLeftArrow] = useState(false)
   const [showRightArrow, setShowRightArrow] = useState(false)
 
@@ -18,8 +19,17 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
     if (categoryRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = categoryRef.current
       const canScroll = scrollWidth > clientWidth
-      setShowLeftArrow(canScroll && scrollLeft > 10)
-      setShowRightArrow(canScroll && scrollLeft < scrollWidth - clientWidth - 10)
+      const showLeft = canScroll && scrollLeft > 10
+      const showRight = canScroll && scrollLeft < scrollWidth - clientWidth - 10
+      
+      setShowLeftArrow(showLeft)
+      setShowRightArrow(showRight)
+      
+      // Обновляем классы для теней
+      if (wrapperRef.current) {
+        wrapperRef.current.classList.toggle('show-left-shadow', showLeft)
+        wrapperRef.current.classList.toggle('show-right-shadow', showRight)
+      }
     }
   }
 
@@ -73,7 +83,7 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
   }
 
   return (
-    <div className="category-filter-wrapper">
+    <div className="category-filter-wrapper" ref={wrapperRef}>
       {showLeftArrow && (
         <button 
           className="category-scroll-btn category-scroll-left"
@@ -84,7 +94,7 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
         </button>
       )}
       <div className="category-filter" ref={categoryRef}>
-        {categories.map(category => (
+        {categories.map((category, index) => (
           <button
             key={category.id}
             className={`category-button ${selectedCategory === category.id ? 'active' : ''}`}
