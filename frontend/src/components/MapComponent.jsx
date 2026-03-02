@@ -14,9 +14,15 @@ try {
 }
 let gift3d = null
 try {
+  // сначала пробуем короткое имя
   gift3d = require('../assets/gift-3d.png')
 } catch (e) {
-  console.warn('3D gift icon not found, using default icon for ads')
+  try {
+    // затем — фактическое имя файла, который ты загрузил
+    gift3d = require('../assets/3dicons-gift-box-dynamic-color.png')
+  } catch (e2) {
+    console.warn('3D gift icon not found, using default icon for ads')
+  }
 }
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
