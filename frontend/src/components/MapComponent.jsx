@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
-import gift3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D подарок для объявлений
+import gift3d from '../assets/3d-building.png' // 3D здание для всех объявлений
 import store3d from '../assets/3dicons-bag-dynamic-color.png' // 3D сумка для всех магазинов
 import restaurant3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.jpg' // 3D ресторан для всех ресторанов
 import './MapComponent.css'
