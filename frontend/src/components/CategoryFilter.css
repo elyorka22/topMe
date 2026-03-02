@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent; /* фон прозрачный, без отдельного блока */
+  box-shadow: none; /* убираем белый блок под кнопками */
   z-index: 1000;
   width: 100%;
 }
@@ -12,8 +12,8 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: white;
-  overflow-x: auto;
+  background: transparent; /* прозрачный фон под кнопками */
+  overflow-x: auto;        /* горизонтальная прокрутка */
   overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
