@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
+import chefHat3d from '../assets/chef-3d.png' // 3D иконка повара для ресторанов
 import './MapComponent.css'
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
@@ -47,9 +48,17 @@ const createCustomIcon = (iconName, color) => {
 // Иконка для локации пользователя
 const userLocationIcon = createCustomIcon('location_on', '#9b59b6')
 
+// 3D иконка для ресторанов (PNG)
+const restaurantIcon3D = L.icon({
+  iconUrl: chefHat3d,
+  iconSize: [48, 48],
+  iconAnchor: [24, 44],
+  popupAnchor: [0, -44],
+})
+
 // Иконки для разных категорий
 const categoryIcons = {
-  restaurants: createCustomIcon('chef_hat', '#e74c3c'), // Красный для ресторанов
+  restaurants: restaurantIcon3D, // 3D иконка ресторана
   shops: createCustomIcon('store', '#3498db'), // Синий для магазинов
   ads: createCustomIcon('campaign', '#2ecc71'), // Зеленый для объявлений
 }
