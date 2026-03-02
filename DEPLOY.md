@@ -51,22 +51,20 @@ vercel --prod
 
 ---
 
-## Деплой на Railway
+## Деплой на Railway (Backend API)
 
-### Шаг 1: Подготовка
-1. Создайте файл `railway.json` (опционально):
-```json
-{
-  "build": {
-    "builder": "NIXPACKS"
-  },
-  "deploy": {
-    "startCommand": "npm run preview",
-    "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
-  }
-}
-```
+### Шаг 1: Подготовка Backend
+1. Убедитесь, что в папке `backend/` есть:
+   - `server.js` - главный файл сервера
+   - `package.json` - зависимости
+   - `railway.json` - конфигурация (уже создан)
+
+2. Настройте переменные окружения в Railway:
+   - `PORT` - автоматически устанавливается Railway
+   - `FRONTEND_URL` - URL вашего фронтенда на Vercel
+   - `DATABASE_URL` - URL PostgreSQL базы данных
+   - `JWT_SECRET` - секретный ключ для JWT
+   - `NODE_ENV=production`
 
 ### Шаг 2: Деплой через Railway CLI
 1. Установите Railway CLI:
@@ -81,6 +79,7 @@ railway login
 
 3. Инициализируйте проект:
 ```bash
+cd backend
 railway init
 ```
 
@@ -95,27 +94,42 @@ railway up
 3. Нажмите "New Project"
 4. Выберите "Deploy from GitHub repo"
 5. Выберите ваш репозиторий
-6. Railway автоматически определит Vite проект
+6. **Важно:** В настройках проекта укажите:
+   - **Root Directory:** `backend`
+   - Railway автоматически определит Node.js проект
 
-### Шаг 4: Настройка
-1. В настройках проекта добавьте переменные окружения (если нужно)
-2. Railway автоматически определит команды сборки и запуска
+### Шаг 4: Настройка переменных окружения
+В Railway Dashboard → Variables добавьте:
+```
+FRONTEND_URL=https://your-frontend.vercel.app
+DATABASE_URL=postgresql://... (из Railway PostgreSQL)
+JWT_SECRET=your-secret-key-here
+NODE_ENV=production
+```
+
+### Шаг 5: Подключение PostgreSQL
+1. В Railway Dashboard нажмите "+ New"
+2. Выберите "Database" → "PostgreSQL"
+3. Railway автоматически создаст БД и установит `DATABASE_URL`
+4. Используйте этот URL в переменных окружения
 
 ---
 
 ## Важные замечания
 
-### Для Vercel:
+### Для Vercel (Frontend):
 - Vercel отлично подходит для статических сайтов (SPA)
 - Бесплатный план: 100GB bandwidth/месяц
 - Автоматический HTTPS
 - CDN по всему миру
+- **Используйте для фронтенда!**
 
-### Для Railway:
-- Railway лучше для бэкенда, но может хостить и фронтенд
+### Для Railway (Backend + Database):
+- Railway идеален для бэкенда и баз данных
 - Бесплатный план: $5 кредитов/месяц
 - Можно добавить базу данных PostgreSQL
 - Автоматический HTTPS
+- **Используйте для бэкенда и БД!**
 
 ---
 
