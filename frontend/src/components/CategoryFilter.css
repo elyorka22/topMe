@@ -6,7 +6,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
-  /* НЕ скрываем overflow, чтобы карусель работала */
 }
 
 .category-filter {
@@ -14,17 +13,15 @@
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   background: white;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE и Edge */
   flex: 1;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory; /* Обязательное выравнивание для карусели */
+  scroll-snap-type: x mandatory; /* Выравнивание элементов карусели */
   width: 100%;
-  /* Принудительная прокрутка - контент шире контейнера */
-  min-width: max-content;
 }
 
 /* Скрываем скроллбар в WebKit браузерах */
@@ -46,15 +43,11 @@
   color: #333;
   transition: all 0.3s ease;
   white-space: nowrap;
-  flex-shrink: 0;
+  flex: 0 0 auto; /* кнопки не сжимаются и участвуют в горизонтальной прокрутке */
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-x; /* Разрешаем горизонтальную прокрутку */
   scroll-snap-align: center; /* Центрируем при прокрутке карусели */
-  /* Фиксированная ширина для карусели - кнопки стоят рядом */
-  min-width: 130px;
-  width: 130px;
-  max-width: 130px;
 }
 
 .category-button:active {
@@ -143,31 +136,23 @@
   
   .category-filter {
     padding: 0.75rem 0.5rem;
-    /* Кнопки стоят рядом с минимальным отступом для карусели */
-    gap: 0.75rem;
-    /* Принудительная прокрутка */
+    gap: 0.5rem;
     scroll-snap-type: x mandatory;
-    /* Убеждаемся, что контент шире экрана - обязательно! */
+    /* Контент шире экрана – будет горизонтальная прокрутка */
     min-width: max-content;
     width: 100%;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    /* Разрешаем прокрутку на touch-устройствах */
+    overflow-x: auto;
+    overflow-y: hidden;
     touch-action: pan-x;
   }
   
   .category-button {
-    /* На мобильных каждая кнопка занимает большую фиксированную ширину для карусели */
-    /* Ширина должна быть такой, чтобы не все кнопки помещались на экране */
-    min-width: 200px !important;
-    width: 200px !important;
-    max-width: 200px !important;
-    padding: 0.75rem 1.2rem;
+    /* На мобильных каждая кнопка занимает примерно половину экрана,
+       чтобы была обязательная горизонтальная прокрутка (карусель) */
+    flex: 0 0 48vw;
+    max-width: 48vw;
+    padding: 0.7rem 1rem;
     justify-content: center;
-    flex-shrink: 0 !important;
-    /* Центрируем при прокрутке карусели */
-    scroll-snap-align: center;
-    /* Запрещаем сжатие кнопок */
     box-sizing: border-box;
   }
   
