@@ -87,26 +87,30 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.45rem 0.75rem;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 0.9rem;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.95), rgba(118, 75, 162, 0.9));
+  border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   color: white;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 80px;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
 }
 
 .auth-button:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 1), rgba(118, 75, 162, 0.95));
+  border-color: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.5);
 }
 
 .auth-button .material-symbols-outlined {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .create-ad-button,
@@ -128,13 +132,13 @@
 @media (min-width: 768px) {
   .auth-button {
     gap: 0.5rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    min-width: 100px;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+    min-width: 110px;
   }
   
   .auth-button .material-symbols-outlined {
-    font-size: 20px;
+    font-size: 22px;
   }
   
   .create-ad-button,
@@ -177,7 +181,16 @@
     display: none;
   }
   
-  .auth-button,
+  .auth-button {
+    min-width: 48px;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+  
+  .auth-button .material-symbols-outlined {
+    font-size: 22px;
+  }
+  
   .create-ad-button,
   .admin-button {
     min-width: 44px;
@@ -198,7 +211,11 @@
     flex-wrap: nowrap;
   }
 
-  .auth-button,
+  .auth-button {
+    flex: 0 0 auto;
+    min-width: 48px;
+  }
+  
   .create-ad-button {
     flex: 0 0 auto;
     min-width: 44px;

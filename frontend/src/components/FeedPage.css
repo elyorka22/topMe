@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  animation: feedSlideInRight 0.28s ease-out;
 }
 
 .feed-shell {
@@ -115,6 +116,17 @@
   .feed-content {
     grid-template-columns: 1fr;
     padding-inline: 1rem;
+  }
+}
+
+@keyframes feedSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
