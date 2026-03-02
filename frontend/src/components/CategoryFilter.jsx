@@ -46,17 +46,27 @@ function CategoryFilter({ selectedCategory, onCategoryChange }) {
     }
   }, [])
 
-  // Прокрутка к активной категории при изменении
+  // Прокрутка к активной категории при изменении (только по горизонтали)
   useEffect(() => {
-    if (categoryRef.current) {
-      const activeButton = categoryRef.current.querySelector('.category-button.active')
+    const container = categoryRef.current
+    if (container) {
+      const activeButton = container.querySelector('.category-button.active')
       if (activeButton) {
-        activeButton.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
+        const containerRect = container.getBoundingClientRect()
+        const buttonRect = activeButton.getBoundingClientRect()
+
+        // Считаем смещение так, чтобы активная кнопка была по центру по горизонтали
+        const delta =
+          buttonRect.left -
+          containerRect.left -
+          (containerRect.width - buttonRect.width) / 2
+
+        container.scrollBy({
+          left: delta,
+          behavior: 'smooth'
         })
       }
+
       // Проверяем после прокрутки
       setTimeout(checkScroll, 300)
     }
