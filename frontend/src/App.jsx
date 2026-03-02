@@ -184,19 +184,24 @@ function AppContent() {
             {!isAuthenticated ? (
               <button className="auth-button" onClick={() => setShowAuthModal(true)}>
                 <span className="material-symbols-outlined">login</span>
-                Kirish
+                <span className="auth-button-text">Kirish</span>
               </button>
             ) : (
-              <UserMenu 
-                onShowCreateAd={() => setShowCreateAd(true)}
-                onShowAdminPanel={() => setShowAdminPanel(true)}
-              />
-            )}
-            {isAuthenticated && (
-              <button className="create-ad-button" onClick={handleCreateAdClick}>
-                <span className="material-symbols-outlined">add</span>
-                E'lon yaratish
-              </button>
+              <>
+                <UserMenu 
+                  onShowCreateAd={() => setShowCreateAd(true)}
+                  onShowAdminPanel={() => setShowAdminPanel(true)}
+                />
+                <button className="create-ad-button" onClick={handleCreateAdClick}>
+                  <span className="material-symbols-outlined">add</span>
+                  <span className="button-text">E'lon</span>
+                </button>
+                {isAdmin && (
+                  <button className="admin-button" onClick={() => setShowAdminPanel(true)}>
+                    <span className="material-symbols-outlined">admin_panel_settings</span>
+                  </button>
+                )}
+              </>
             )}
           </div>
         </div>
