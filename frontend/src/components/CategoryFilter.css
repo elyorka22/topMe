@@ -1,11 +1,30 @@
-.category-filter {
+.category-filter-wrapper {
+  position: relative;
   display: flex;
-  gap: 1rem;
-  padding: 1rem 2rem;
+  align-items: center;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+.category-filter {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
   overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+
+/* Скрываем скроллбар в WebKit браузерах */
+.category-filter::-webkit-scrollbar {
+  display: none;
 }
 
 .category-button {
@@ -34,19 +53,6 @@
   transform: scale(0.95);
 }
 
-@media (min-width: 768px) {
-  .category-button {
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 25px;
-    font-size: 0.95rem;
-  }
-  
-  .category-button:active {
-    transform: scale(1);
-  }
-}
-
 .category-button:hover {
   border-color: #667eea;
   background: #f5f7ff;
@@ -73,7 +79,94 @@
   vertical-align: middle;
 }
 
+.category-name {
+  font-weight: 500;
+}
+
+/* Стрелки навигации для мобильных */
+.category-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(102, 126, 234, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-scroll-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.category-scroll-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.category-scroll-btn .material-symbols-outlined {
+  font-size: 24px;
+  color: #667eea;
+}
+
+.category-scroll-left {
+  left: 0.5rem;
+}
+
+.category-scroll-right {
+  right: 0.5rem;
+}
+
+/* На очень маленьких экранах показываем стрелки */
+@media (max-width: 767px) {
+  .category-filter-wrapper {
+    padding: 0 2.5rem; /* Место для стрелок */
+  }
+  
+  .category-filter {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .category-scroll-btn {
+    display: flex;
+  }
+}
+
+/* На десктопе скрываем стрелки */
 @media (min-width: 768px) {
+  .category-scroll-btn {
+    display: none;
+  }
+  
+  .category-filter-wrapper {
+    padding: 0;
+  }
+  
+  .category-filter {
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .category-button {
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+  }
+  
+  .category-button:active {
+    transform: scale(1);
+  }
+  
   .category-icon {
     font-size: 20px;
   }
@@ -81,8 +174,27 @@
   .category-icon.material-symbols-outlined {
     font-size: 20px;
   }
-}
-
-.category-name {
-  font-weight: 500;
+  
+  .category-filter:hover {
+    scrollbar-width: thin;
+  }
+  
+  .category-filter:hover::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+  
+  .category-filter:hover::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+  }
+  
+  .category-filter:hover::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 3px;
+  }
+  
+  .category-filter:hover::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+  }
 }
