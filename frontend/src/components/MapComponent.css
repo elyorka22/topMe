@@ -90,3 +90,21 @@
 .open-button:active {
   transform: translateY(0);
 }
+
+/* Подписи над маркерами (название/цена) */
+.marker-label {
+  background: rgba(17, 24, 39, 0.85);
+  color: #f9fafb;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.marker-label .leaflet-tooltip-arrow {
+  display: none;
+}

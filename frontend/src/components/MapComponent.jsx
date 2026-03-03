@@ -219,7 +219,7 @@ function MapComponent({ locations, onLocationClick }) {
         marker.bindTooltip(labelText, {
           permanent: true,
           direction: 'top',
-          offset: [0, -4],
+          offset: [0, -26], // приподнимаем подпись над иконкой
           className: 'marker-label',
           opacity: 0.95,
         })
