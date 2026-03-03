@@ -63,7 +63,7 @@ function LocationDetail({ location, userLocation, onClose, onAddToCart }) {
             <p>{location.description}</p>
           </div>
 
-          {distance && (
+          {distance && location.category !== 'restaurants' && (
             <div className="location-section">
               <h3>📍 Masofa</h3>
               <p className="distance-value">{distance}</p>
@@ -86,12 +86,14 @@ function LocationDetail({ location, userLocation, onClose, onAddToCart }) {
             </div>
           )}
 
-          <div className="location-section">
-            <h3>📍 Koordinatalar</h3>
-            <p className="coordinates">
-              {location.lat.toFixed(6)}, {location.lng.toFixed(6)}
-            </p>
-          </div>
+          {location.category !== 'restaurants' && (
+            <div className="location-section">
+              <h3>📍 Koordinatalar</h3>
+              <p className="coordinates">
+                {location.lat.toFixed(6)}, {location.lng.toFixed(6)}
+              </p>
+            </div>
+          )}
 
           {menu && (
             <RestaurantMenu 
