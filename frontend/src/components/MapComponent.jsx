@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
-import gift3d from '../assets/3d-building.png' // 3D zodlik binosi barcha e'lonlar uchun
-import store3d from '../assets/3dicons-bag-dynamic-color.png' // 3D sumka barcha do'konlar uchun
-import restaurant3d from '../assets/3dicons-gift-box-dynamic-color.png' // 3D restoran ikonkasi barcha restoranlar uchun
+import gift3d from '../assets/3d-building.png' // 3D bino barcha e'lonlar uchun
+import store3d from '../assets/3dicons-bag-front-color.png' // 3D sumka barcha do'konlar uchun
+import restaurant3d from '../assets/3dicons-takeway-cup-front-color.png' // 3D take-away stakan barcha restoranlar uchun
 import './MapComponent.css'
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
