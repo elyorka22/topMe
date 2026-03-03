@@ -16,7 +16,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -28,7 +28,7 @@
 
 .add-location-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 120, 73, 0.4);
 }
 
 .category-filter {
@@ -50,13 +50,13 @@
 }
 
 .filter-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #ff7849;
+  color: #ff7849;
 }
 
 .filter-btn.active {
-  background: #667eea;
-  border-color: #667eea;
+  background: #ff7849;
+  border-color: #ff7849;
   color: white;
 }
 
@@ -253,8 +253,8 @@
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #ff7849;
+  box-shadow: 0 0 0 3px rgba(255, 120, 73, 0.1);
 }
 
 .form-actions {
@@ -285,13 +285,13 @@
 }
 
 .save-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
 }
 
 .save-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 120, 73, 0.4);
 }
 
 @media (max-width: 768px) {

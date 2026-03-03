@@ -16,8 +16,8 @@
   -webkit-backdrop-filter: blur(20px);
   background: linear-gradient(
       135deg,
-      rgba(108, 99, 255, 0.24),
-      rgba(118, 75, 162, 0.18)
+      rgba(255, 120, 73, 0.24),
+      rgba(255, 140, 90, 0.18)
     )
     border-box;
 }
@@ -38,7 +38,7 @@
   margin: 0 auto;
   padding: 0.5rem 0.75rem;
   border-radius: 22px;
-  background: radial-gradient(circle at top left, #a5b4fc33, #ffffffdd);
+  background: radial-gradient(circle at top left, #ffd4c133, #ffffffdd);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: var(--shadow-soft);
 }
@@ -88,7 +88,7 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.9rem;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.95), rgba(118, 75, 162, 0.9));
+  background: linear-gradient(135deg, rgba(255, 120, 73, 0.95), rgba(255, 140, 90, 0.9));
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   color: white;
@@ -98,14 +98,14 @@
   transition: all 0.2s ease;
   min-width: 80px;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 120, 73, 0.4);
 }
 
 .auth-button:hover {
-  background: linear-gradient(135deg, rgba(108, 99, 255, 1), rgba(118, 75, 162, 0.95));
+  background: linear-gradient(135deg, rgba(255, 120, 73, 1), rgba(255, 140, 90, 0.95));
   border-color: rgba(255, 255, 255, 1);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 120, 73, 0.5);
 }
 
 .auth-button .material-symbols-outlined {

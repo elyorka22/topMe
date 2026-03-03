@@ -41,12 +41,12 @@
 }
 
 .category-tab:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #ff7849;
+  color: #ff7849;
 }
 
 .category-tab.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
   border-color: transparent;
 }
@@ -105,12 +105,12 @@
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #667eea;
+  color: #ff7849;
 }
 
 .add-to-cart-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -119,12 +119,12 @@
   cursor: pointer;
   align-self: center;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 120, 73, 0.3);
 }
 
 .add-to-cart-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 120, 73, 0.4);
 }
 
 .add-to-cart-btn:active {

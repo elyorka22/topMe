@@ -48,10 +48,10 @@
 }
 
 .bottom-nav-button.active {
-  background: radial-gradient(circle at top, #7f7aff, #6c63ff);
+  background: radial-gradient(circle at top, #ff8c5a, #ff7849);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 14px 35px rgba(108, 99, 255, 0.7);
+  box-shadow: 0 14px 35px rgba(255, 120, 73, 0.7);
 }
 
 .bottom-nav-button.active .bottom-nav-icon {

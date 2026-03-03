@@ -5,8 +5,8 @@
 }
 
 :root {
-  --color-primary: #6c63ff;
-  --color-primary-soft: #7f7aff;
+  --color-primary: #ff7849;
+  --color-primary-soft: #ff8c5a;
   --color-accent: #ff6b6b;
   --color-success: #2ecc71;
   --color-bg: #f5f7fb;
@@ -22,7 +22,7 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle at top, #eef2ff 0, #f5f7fb 45%, #f9fafb 100%);
+  background: radial-gradient(circle at top, #fff5f0 0, #f5f7fb 45%, #f9fafb 100%);
   color: var(--color-text-main);
 }
 

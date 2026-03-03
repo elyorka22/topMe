@@ -74,14 +74,14 @@
   width: 56px;
   height: 56px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #6c63ff, #ff6b6b);
+  background: linear-gradient(135deg, #ff7849, #ff6b6b);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-weight: 700;
   font-size: 1.2rem;
-  box-shadow: 0 12px 30px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 12px 30px rgba(255, 120, 73, 0.5);
 }
 
 .profile-main-info h3 {
@@ -102,8 +102,8 @@
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
-  background: #eef2ff;
-  color: #4f46e5;
+  background: #fff5f0;
+  color: #ff7849;
 }
 
 .profile-role-user {
@@ -159,15 +159,15 @@
   justify-content: center;
   gap: 0.4rem;
   color: #ffffff;
-  background: linear-gradient(135deg, #6c63ff, #7f7aff);
-  box-shadow: 0 12px 30px rgba(108, 99, 255, 0.45);
+  background: linear-gradient(135deg, #ff7849, #ff8c5a);
+  box-shadow: 0 12px 30px rgba(255, 120, 73, 0.45);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .profile-primary-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 40px rgba(108, 99, 255, 0.6);
+  box-shadow: 0 16px 40px rgba(255, 120, 73, 0.6);
 }
 
 .profile-list {

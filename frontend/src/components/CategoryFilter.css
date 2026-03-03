@@ -55,17 +55,17 @@
 }
 
 .category-button:hover {
-  border-color: #667eea;
+  border-color: #ff7849;
   background: #f5f7ff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 120, 73, 0.2);
 }
 
 .category-button.active {
-  border-color: #667eea;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #ff7849;
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 120, 73, 0.3);
 }
 
 .category-icon {
@@ -92,7 +92,7 @@
   width: 36px;
   height: 36px;
   border: none;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(255, 120, 73, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 50%;
   cursor: pointer;
@@ -106,7 +106,7 @@
 }
 
 .category-scroll-btn:hover {
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(255, 120, 73, 0.2);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -116,7 +116,7 @@
 
 .category-scroll-btn .material-symbols-outlined {
   font-size: 24px;
-  color: #667eea;
+  color: #ff7849;
 }
 
 .category-scroll-left {
@@ -250,11 +250,11 @@
   }
   
   .category-filter:hover::-webkit-scrollbar-thumb {
-    background: #667eea;
+    background: #ff7849;
     border-radius: 3px;
   }
   
   .category-filter:hover::-webkit-scrollbar-thumb:hover {
-    background: #764ba2;
+    background: #ff8c5a;
   }
 }

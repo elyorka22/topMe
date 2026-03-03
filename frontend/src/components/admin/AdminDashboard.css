@@ -24,7 +24,7 @@
 }
 
 .stat-card:hover {
-  border-color: #667eea;
+  border-color: #ff7849;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -92,7 +92,7 @@
 
 .info-card .material-symbols-outlined {
   font-size: 32px;
-  color: #667eea;
+  color: #ff7849;
 }
 
 .info-card strong {
@@ -125,7 +125,7 @@
 }
 
 .recent-ad-item:hover {
-  border-color: #667eea;
+  border-color: #ff7849;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 

@@ -84,12 +84,12 @@
 }
 
 .auth-tab:hover {
-  color: #667eea;
+  color: #ff7849;
 }
 
 .auth-tab.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #ff7849;
+  border-bottom-color: #ff7849;
 }
 
 .auth-error {
@@ -127,7 +127,7 @@
 
 .auth-form-group label .material-symbols-outlined {
   font-size: 20px;
-  color: #667eea;
+  color: #ff7849;
 }
 
 .auth-form-group input {
@@ -142,8 +142,8 @@
 
 .auth-form-group input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #ff7849;
+  box-shadow: 0 0 0 3px rgba(255, 120, 73, 0.1);
 }
 
 .auth-form-group input:disabled {
@@ -154,7 +154,7 @@
 .auth-submit {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7849 0%, #ff8c5a 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -162,13 +162,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 120, 73, 0.3);
   margin-top: 1rem;
 }
 
 .auth-submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 120, 73, 0.4);
 }
 
 .auth-submit:disabled {
