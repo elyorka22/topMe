@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server'
 import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import gift3d from '../assets/3d-building.png' // 3D bino barcha e'lonlar uchun
-import store3d from '../assets/m503t0013_store_12june22_02.jpg' // 3D do'kon binosi barcha do'konlar uchun
+import store3d from '../assets/3dicons-bag-front-color.png' // 3D sumka barcha do'konlar uchun
 import restaurant3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.png' // 3D restoran binosi barcha restoranlar uchun
 import './MapComponent.css'
 
