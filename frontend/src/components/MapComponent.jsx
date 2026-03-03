@@ -4,7 +4,7 @@ import L from 'leaflet'
 import { getUserLocation, calculateDistance, formatDistance } from '../utils/geolocation'
 import gift3d from '../assets/3d-building.png' // 3D bino barcha e'lonlar (ads) uchun
 import store3d from '../assets/—Pngtree—cute 3d rendered style isometric_22508657.png' // 3D do'kon binosi barcha magazinlar uchun
-import restaurant3d from '../assets/3dicons-tea-cup-front-color.png' // 3D choy stakani barcha restoranlar uchun
+import restaurant3d from '../assets/3dicons-takeway-cup-front-color.png' // 3D take-away stakani barcha restoranlar uchun
 import './MapComponent.css'
 
 // Координаты города по умолчанию: 40°59′52″ с. ш. 71°14′25″ в. д.
