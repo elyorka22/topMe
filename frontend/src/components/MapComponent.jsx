@@ -207,6 +207,24 @@ function MapComponent({ locations, onLocationClick }) {
           </div>
         `)
 
+      // Маленькие подписи над иконками: название для ресторанов/магазинов, цена для объявлений
+      let labelText = ''
+      if (location.category === 'restaurants' || location.category === 'shops') {
+        labelText = location.name || ''
+      } else if (location.category === 'ads') {
+        labelText = location.price || location.name || ''
+      }
+
+      if (labelText) {
+        marker.bindTooltip(labelText, {
+          permanent: true,
+          direction: 'top',
+          offset: [0, -4],
+          className: 'marker-label',
+          opacity: 0.95,
+        })
+      }
+
       markersRef.current.push(marker)
     })
 

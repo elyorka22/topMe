@@ -63,7 +63,7 @@ function LocationDetail({ location, userLocation, onClose, onAddToCart }) {
             <p>{location.description}</p>
           </div>
 
-          {distance && location.category !== 'restaurants' && (
+          {distance && location.category === 'ads' && (
             <div className="location-section">
               <h3>📍 Masofa</h3>
               <p className="distance-value">{distance}</p>
@@ -86,7 +86,7 @@ function LocationDetail({ location, userLocation, onClose, onAddToCart }) {
             </div>
           )}
 
-          {location.category !== 'restaurants' && (
+          {location.category === 'ads' && (
             <div className="location-section">
               <h3>📍 Koordinatalar</h3>
               <p className="coordinates">
