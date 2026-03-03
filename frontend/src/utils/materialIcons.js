@@ -14,7 +14,6 @@
 
 export const materialIcons = {
   // Рестораны
-  chef_hat: 'chef_hat', // Шеф-повар (рекомендуется для ресторанов)
   restaurant: 'restaurant',
   dining: 'dining',
   restaurant_menu: 'restaurant_menu',

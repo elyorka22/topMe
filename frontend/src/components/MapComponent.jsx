@@ -78,9 +78,9 @@ const storeIcon3D = store3d
 
 // Иконки для разных категорий
 const categoryIcons = {
-  restaurants: restaurantIcon3D || createCustomIcon('chef_hat', '#e74c3c'), // 3D иконка или дефолтная
-  shops: storeIcon3D || createCustomIcon('store', '#3498db'), // 3D иконка магазина или дефолтная
-  ads: giftIcon3D || createCustomIcon('campaign', '#2ecc71'), // 3D подарок для объявлений или дефолтная
+  restaurants: restaurantIcon3D || createCustomIcon('restaurant', '#e74c3c'),
+  shops: storeIcon3D || createCustomIcon('storefront', '#3498db'),
+  ads: giftIcon3D || createCustomIcon('campaign', '#2ecc71'),
 }
 
 function MapComponent({ locations, onLocationClick }) {

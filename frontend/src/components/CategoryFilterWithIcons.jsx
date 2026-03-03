@@ -5,8 +5,8 @@ import './CategoryFilter.css'
 
 const categories = [
   { id: 'all', name: 'Все', icon: 'location_on' },
-  { id: 'restaurants', name: 'Рестораны', icon: 'chef_hat' }, // Используем chef_hat
-  { id: 'shops', name: 'Магазины', icon: 'store' },
+  { id: 'restaurants', name: 'Рестораны', icon: 'restaurant' },
+  { id: 'shops', name: 'Магазины', icon: 'storefront' },
   { id: 'ads', name: 'Объявления', icon: 'campaign' },
 ]
 

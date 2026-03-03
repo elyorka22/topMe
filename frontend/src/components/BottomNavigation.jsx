@@ -4,9 +4,9 @@ import './BottomNavigation.css'
 // Категории карты (фильтры)
 const categories = [
   { id: 'all', name: 'Hammasi', icon: 'location_on' },
-  { id: 'restaurants', name: 'Restoranlar', icon: 'chef_hat' },
-  { id: 'shops', name: 'Do\'konlar', icon: 'store' },
-  { id: 'ads', name: 'E\'lonlar', icon: 'campaign' },
+  { id: 'restaurants', name: 'Restoranlar', icon: 'restaurant' },
+  { id: 'shops', name: "Do'konlar", icon: 'storefront' },
+  { id: 'ads', name: "E'lonlar", icon: 'campaign' },
 ]
 
 function BottomNavigation({ selectedCategory, onCategoryChange, onOpenFeed, onOpenProfile }) {

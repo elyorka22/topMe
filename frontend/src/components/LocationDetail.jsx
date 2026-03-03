@@ -8,8 +8,8 @@ import { getShopProducts } from '../data/products'
 import './LocationDetail.css'
 
 const categoryIcons = {
-  restaurants: 'chef_hat',
-  shops: 'store',
+  restaurants: 'restaurant',
+  shops: 'storefront',
   ads: 'campaign',
 }
 
